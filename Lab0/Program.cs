@@ -29,16 +29,19 @@ class Program
 
         using (StreamReader sw = new StreamReader("C:\\Users\\azcun\\source\\repos\\Lab0\\lab0\\number.txt"))
         {
+            int sum = 0;
             string line;
             Console.WriteLine("These are the prime numbers between your low and high number");
             while ((line = sw.ReadLine()) != null)
             {
                 int.TryParse(line, out int num);
+                sum += num;
                 if (isPrime(num))
                 {
-                    Console.WriteLine("PRIME: "+num);
+                    Console.WriteLine("PRIME: " + num);
                 }
             }
+            Console.WriteLine("SUM: " + sum);
         }
 
     }
